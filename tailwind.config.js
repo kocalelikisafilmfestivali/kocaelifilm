@@ -15,7 +15,7 @@ module.exports = {
         sans: ["Poppins", "sans-serif"],
       },
       boxShadow: {
-        selectShadow: "0 6px 10px 0.1px rgb(0 0 0 / 21%)",
+        selectShadow: "0 0px 10px 0.1px rgb(0 0 0 / 11%)",
       },
     },
   },

@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
 import {
+  CalendarIcon,
   CloudUploadIcon,
   LockClosedIcon,
-  RefreshIcon,
 } from "@heroicons/react/outline";
+import BlogCard from "../components/BlogCard";
+import Image from "next/image";
 const people = [
   {
     name: "Whitney Francis",
@@ -94,83 +96,45 @@ const posts = [
 const Home: NextPage = () => {
   const features = [
     {
-      name: "Push to Deploy",
-      description:
-        "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      name: "Başvuru Formu",
       icon: CloudUploadIcon,
     },
     {
-      name: "SSL Certificates",
-      description:
-        "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      name: "Şartname",
       icon: LockClosedIcon,
     },
     {
-      name: "Simple Queues",
-      description:
-        "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
-      icon: RefreshIcon,
+      name: "Festival Programı",
+      icon: CalendarIcon,
     },
   ];
   return (
-    <div className="relative py-16 bg-white sm:py-24 lg:py-22">
-      <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+    <div className="relative py-20 bg-white">
+      <section className="box">
         <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
-          Deploy faster
+          T.C. Kültür ve Turizm Bakanlığı Katkılarıyla
         </h2>
-        <p className="mt-2 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          Everything you need to deploy your app
-        </p>
-        <p className="mx-auto mt-5 text-xl text-gray-500 max-w-prose">
-          Phasellus lorem quam molestie id quisque diam aenean nulla in.
-          Accumsan in quis quis nunc, ullamcorper malesuada. Eleifend
-          condimentum id viverra nulla.
-        </p>
-        <div className="mt-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="pt-6">
-                <div className="flow-root px-6 pb-8 rounded-lg bg-gray-50">
-                  <div className="-mt-6">
-                    <div>
-                      <span className="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
-                        <feature.icon
-                          className="w-6 h-6 text-white"
-                          aria-hidden="true"
-                        />
-                      </span>
-                    </div>
-                    <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">
-                      {feature.name}
-                    </h3>
-                    <p className="mt-5 text-base text-gray-500">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <section className="px-4 mx-auto py-14 max-w-7xl sm:py-22 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-lg">
+        <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
+          Uluslararası Kocaeli Kısa Film Festivali
+        </h1>
+        <div className="relative mt-8 overflow-hidden rounded-lg">
           <div className="absolute inset-0">
-            <img
-              src="https://tailwindui.com/img/ecommerce-images/home-page-01-feature-section-02.jpg"
+            <Image
+              layout="fill"
+              src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
               alt=""
               className="object-cover object-center w-full h-full"
             />
           </div>
-          <div className="relative px-6 py-32 bg-gray-900 bg-opacity-75 sm:py-40 sm:px-12 lg:px-16">
+          <div className="relative px-6 bg-gray-900 bg-opacity-75 py-22 sm:py-28 sm:px-12 lg:px-16">
             <div className="relative flex flex-col items-center max-w-3xl mx-auto text-center">
               <h2
                 id="comfort-heading"
-                className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+                className="text-2xl font-bold text-white sm:text-3xl"
               >
-                Simple productivity
+                Festival Hakkında
               </h2>
-              <p className="mt-3 text-xl text-white">
+              <p className="mt-3 text-lg text-white">
                 Endless tasks, limited hours, a single piece of paper. Not
                 really a haiku, but were doing our best here. No kanban boards,
                 burndown charts, or tangled flowcharts with our Focus system.
@@ -179,9 +143,58 @@ const Home: NextPage = () => {
             </div>
           </div>
         </div>
+        <div className="mt-8">
+          <div className="grid max-w-5xl grid-cols-1 gap-8 mx-auto sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.name} className="pt-6">
+                <div className="flex items-center justify-center px-6 py-6 bg-white rounded-lg shadow-selectShadow">
+                  <div className="flex items-center justify-center">
+                    <span className="flex items-center justify-center p-3 mr-4 bg-indigo-500 rounded-md shadow-lg">
+                      <feature.icon
+                        className="w-6 h-6 text-white"
+                        aria-hidden="true"
+                      />
+                    </span>
+
+                    <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                      {feature.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
-      <div className="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="box">
+        <div className="space-y-12">
+          <h2 className="text-3xl font-bold sm:text-4xl">Jüri Üyelerimiz</h2>
+
+          <ul
+            role="list"
+            className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6 lg:gap-y-12"
+          >
+            {people.map((person) => (
+              <li key={person.name}>
+                <div className="flex flex-col items-center justify-center">
+                  <div className="w-full mb-4 h-60">
+                    <img
+                      className="object-cover w-full h-full rounded-lg shadow-lg"
+                      src={person.imageUrl}
+                      alt=""
+                    />
+                  </div>
+                  <h3>{person.name}</h3>
+                  <p className="text-indigo-600">{person.role}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="box">
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
           <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
             <img
@@ -226,37 +239,36 @@ const Home: NextPage = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="px-4 mx-auto py-14 max-w-7xl sm:px-6 lg:px-8 lg:py-22">
+      <section className="box">
         <div className="space-y-12">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Meet our leadership
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Festival Kapsamındaki Etkinlikler
           </h2>
 
           <ul
             role="list"
-            className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
+            className="space-y-12 lg:grid lg:grid-cols-4 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
           >
             {people.map((person) => (
               <li key={person.name}>
-                <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-                  <div className="h-0 aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-40 h-40 mb-4">
                     <img
                       className="object-cover rounded-lg shadow-lg"
                       src={person.imageUrl}
                       alt=""
                     />
                   </div>
-                  <div className="sm:col-span-2">
-                    <div className="space-y-4">
-                      <div className="space-y-1 text-lg font-medium leading-6">
-                        <h3>{person.name}</h3>
-                        <p className="text-indigo-600">{person.role}</p>
-                      </div>
-                      <div className="text-lg">
-                        <p className="text-gray-500">{person.bio}</p>
-                      </div>
+
+                  <div className="space-y-2">
+                    <div className="space-y-1 text-lg font-medium leading-6">
+                      <h3>{person.name}</h3>
+                      <p className="text-base text-indigo-600">{person.role}</p>
+                    </div>
+                    <div className="text-base">
+                      <p className="text-gray-500">{person.bio}</p>
                     </div>
                   </div>
                 </div>
@@ -264,123 +276,26 @@ const Home: NextPage = () => {
             ))}
           </ul>
         </div>
-      </div>
+      </section>
 
-      <div className="px-4 mx-auto pb-14 max-w-7xl sm:px-6 lg:px-8 lg:pb-22">
-        <div className="space-y-12">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Etkinlikler
-          </h2>
-
-          <ul
-            role="list"
-            className="space-y-12 lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
-          >
-            {people.map((person) => (
-              <li key={person.name}>
-                <div className="space-y-4 sm:grid sm:grid-cols-3 sm:gap-6 sm:space-y-0 lg:gap-8">
-                  <div className="h-0 aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4">
-                    <img
-                      className="object-cover rounded-lg shadow-lg"
-                      src={person.imageUrl}
-                      alt=""
-                    />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <div className="space-y-4">
-                      <div className="space-y-1 text-lg font-medium leading-6">
-                        <h3>{person.name}</h3>
-                        <p className="text-indigo-600">{person.role}</p>
-                      </div>
-                      <div className="text-lg">
-                        <p className="text-gray-500">{person.bio}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <div className="relative px-4 pb-14 sm:px-6 lg:pb-22 lg:px-8">
-        <div className="absolute inset-0">
-          <div className="bg-white h-1/3 sm:h-2/3" />
-        </div>
+      <section className="relative box">
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              From the blog
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Festival Haberleri
             </h2>
-            <p className="max-w-2xl mx-auto mt-3 text-xl text-gray-500 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-              libero labore natus atque, ducimus sed.
-            </p>
           </div>
           <div className="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
-            {posts.map((post) => (
-              <div
-                key={post.title}
-                className="flex flex-col overflow-hidden rounded-lg shadow-lg"
-              >
-                <div className="flex-shrink-0">
-                  <img
-                    className="object-cover w-full h-48"
-                    src={post.imageUrl}
-                    alt=""
-                  />
-                </div>
-                <div className="flex flex-col justify-between flex-1 p-6 bg-white">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
-                      <a href={post.category.href} className="hover:underline">
-                        {post.category.name}
-                      </a>
-                    </p>
-                    <a href={post.href} className="block mt-2">
-                      <p className="text-xl font-semibold text-gray-900">
-                        {post.title}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {post.description}
-                      </p>
-                    </a>
-                  </div>
-                  <div className="flex items-center mt-6">
-                    <div className="flex-shrink-0">
-                      <a href={post.author.href}>
-                        <span className="sr-only">{post.author.name}</span>
-                        <img
-                          className="w-10 h-10 rounded-full"
-                          src={post.author.imageUrl}
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-900">
-                        <a href={post.author.href} className="hover:underline">
-                          {post.author.name}
-                        </a>
-                      </p>
-                      <div className="flex space-x-1 text-sm text-gray-500">
-                        <time dateTime={post.datetime}>{post.date}</time>
-                        <span aria-hidden="true">&middot;</span>
-                        <span>{post.readingTime} read</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            {posts.map((post, i) => (
+              <BlogCard key={i} post={post} />
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900">Our offices</h2>
-        <p className="max-w-3xl mt-6 text-lg text-gray-500">
+      <section className="box !pb-0">
+        <h2 className="text-3xl font-bold text-gray-900">İletişim Bilgileri</h2>
+        <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-500">
           Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id
           malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.
         </p>
@@ -414,7 +329,7 @@ const Home: NextPage = () => {
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

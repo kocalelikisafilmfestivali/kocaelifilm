@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.box {
+  @apply px-4 mx-auto text-center sm:px-6 max-w-7xl lg:px-8 pb-14 sm:pb-24;
+}
+
+*:focus {
+  outline: none;
+}
