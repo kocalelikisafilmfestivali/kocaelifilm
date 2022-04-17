@@ -42,7 +42,7 @@ const people = [
 const posts = [
   {
     title: "Boost your conversion rate",
-    href: "#",
+    href: "s",
     category: { name: "Article", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
@@ -60,7 +60,7 @@ const posts = [
   },
   {
     title: "How to use search engine optimization to drive sales",
-    href: "#",
+    href: "s",
     category: { name: "Video", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -78,7 +78,7 @@ const posts = [
   },
   {
     title: "How to use search engine optimization to drive sales",
-    href: "#",
+    href: "s",
     category: { name: "Video", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
@@ -96,7 +96,7 @@ const posts = [
   },
   {
     title: "Improve your customer experience",
-    href: "#",
+    href: "s",
     category: { name: "Case Study", href: "#" },
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
