@@ -6,6 +6,19 @@
   @apply px-4 mx-auto text-center sm:px-6 max-w-7xl lg:px-8 pb-14 sm:pb-24;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 360px;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
 *:focus {
   outline: none;
+}
+
+img {
+  -webkit-user-drag: none;
 }

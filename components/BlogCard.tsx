@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 
 interface BlogCardProps {
@@ -16,12 +17,16 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
           <p className="text-sm font-medium text-indigo-600">
             {post.category.name}
           </p>
-          <a href={post.href} className="block mt-2">
-            <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-            <p className="mt-3 text-base text-gray-500 line-clamp-3">
-              {post.description}
-            </p>
-          </a>
+          <Link href={`/blog/${post.href}`}>
+            <a className="block mt-2">
+              <p className="text-xl font-semibold text-gray-900">
+                {post.title}
+              </p>
+              <p className="mt-3 text-base text-gray-500 line-clamp-3">
+                {post.description}
+              </p>
+            </a>
+          </Link>
         </div>
       </div>
     </div>
