@@ -192,7 +192,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="box">
+      <section id="juri" className="box">
         <div className="space-y-12">
           <h2 className="text-3xl font-bold sm:text-4xl">Jüri Üyelerimiz</h2>
 
@@ -204,7 +204,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="box">
+      <section id="sponsorlar" className="box">
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
           <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -257,7 +257,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="box">
+      <section id="etkinlikler" className="box">
         <div className="space-y-12">
           <h2 className="text-3xl font-bold sm:text-4xl">
             Festival Kapsamındaki Etkinlikler
@@ -300,7 +300,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="relative box">
+      <section id="haberler" className="relative box">
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -315,7 +315,7 @@ const Home: NextPage = () => {
         </div>
       </section>
 
-      <section className="box !pb-0">
+      <section id="iletisim" className="box !pb-0">
         <h2 className="text-3xl font-bold text-gray-900">İletişim Bilgileri</h2>
         <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-500">
           Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id

@@ -26,25 +26,25 @@ export default function Program() {
               <tr>
                 <th
                   scope="col"
-                  className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                  className="py-3 pl-4 pr-3 text-sm font-semibold text-left text-black sm:pl-6"
                 >
                   No
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Filmin Adı
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Ülke
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Yönetmen
                 </th>
@@ -53,16 +53,16 @@ export default function Program() {
             <tbody className="text-left bg-white divide-y divide-gray-200">
               {movies.map((movie, i) => (
                 <tr key={i}>
-                  <td className="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 whitespace-nowrap sm:pl-6">
+                  <td className="py-3 pl-4 pr-3 text-sm font-medium text-black whitespace-nowrap sm:pl-6">
                     {movie.no}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.title}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.country}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.director}
                   </td>
                 </tr>
@@ -88,25 +88,25 @@ export default function Program() {
               <tr>
                 <th
                   scope="col"
-                  className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                  className="py-3 pl-4 pr-3 text-sm font-semibold text-left text-black sm:pl-6"
                 >
                   No
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Filmin Adı
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Ülke
                 </th>
                 <th
                   scope="col"
-                  className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  className="px-3 py-3 text-sm font-semibold text-left text-black"
                 >
                   Yönetmen
                 </th>
@@ -115,16 +115,16 @@ export default function Program() {
             <tbody className="text-left bg-white divide-y divide-gray-200">
               {movies.map((movie, i) => (
                 <tr key={i}>
-                  <td className="py-4 pl-4 pr-3 text-sm font-medium text-gray-900 whitespace-nowrap sm:pl-6">
+                  <td className="py-3 pl-4 pr-3 text-sm font-medium text-black whitespace-nowrap sm:pl-6">
                     {movie.no}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.title}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.country}
                   </td>
-                  <td className="px-3 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  <td className="px-3 py-3 text-sm text-black whitespace-nowrap">
                     {movie.director}
                   </td>
                 </tr>
