@@ -5,8 +5,8 @@ const nextConfig = {
     domains: ["images.unsplash.com", "kocaelikffcms.herokuapp.com"],
   },
   env: {
-    NEXT_APP_API_URL: "https://kocaelikffcms.herokuapp.com/api/graphql",
-    NEXT_APP_API_IMAGE_URL: "https://kocaelikffcms.herokuapp.com",
+    NEXT_APP_API_URL: "http://141.136.44.174:3000/api/graphql",
+    NEXT_APP_API_IMAGE_URL: "http://141.136.44.174:3000",
   },
 };
 
