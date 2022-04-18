@@ -3,9 +3,10 @@ import { FC } from "react";
 interface TextAreaBoxProps {
   label: string;
   id: string;
+  props: any;
 }
 
-const TextAreaBox: FC<TextAreaBoxProps> = ({ label, id }) => {
+const TextAreaBox: FC<TextAreaBoxProps> = ({ label, id, props }) => {
   return (
     <div className="sm:grid text-left sm:grid-cols-[200px,1fr,1fr] sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
       <label
@@ -19,7 +20,7 @@ const TextAreaBox: FC<TextAreaBoxProps> = ({ label, id }) => {
           id={id}
           rows={6}
           className="block w-full border border-gray-300 rounded-md shadow-sm resize-none sm:text-sm"
-          defaultValue={""}
+          {...props}
         />
       </div>
     </div>

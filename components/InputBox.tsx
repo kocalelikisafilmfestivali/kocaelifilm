@@ -4,9 +4,10 @@ interface InputBoxProps {
   label: string;
   id: string;
   borderless?: boolean;
+  props: any;
 }
 
-const InputBox: FC<InputBoxProps> = ({ label, id, borderless }) => {
+const InputBox: FC<InputBoxProps> = ({ label, id, borderless, props }) => {
   return (
     <div
       className={`sm:grid text-left sm:grid-cols-[200px,1fr,1fr] sm:gap-4 sm:items-start ${
@@ -24,6 +25,7 @@ const InputBox: FC<InputBoxProps> = ({ label, id, borderless }) => {
           type="text"
           id={id}
           className="block w-full border-gray-300 rounded-md shadow-sm sm:text-sm"
+          {...props}
         />
       </div>
     </div>

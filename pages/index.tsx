@@ -8,112 +8,13 @@ import BlogCard from "../components/BlogCard";
 import Image from "next/image";
 import JuriCard from "../components/JuriCard";
 import Link from "next/link";
-const people = [
-  {
-    name: "Whitney Francis",
-    role: "Copywriter",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-    bio: "Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.",
-  },
-  {
-    name: "Whitney Francis",
-    role: "Copywriter",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-    bio: "Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.",
-  },
-  {
-    name: "Whitney Francis",
-    role: "Copywriter",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-    bio: "Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.",
-  },
-  {
-    name: "Whitney Francis",
-    role: "Copywriter",
-    imageUrl:
-      "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-    bio: "Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.",
-  },
-];
-/* This example requires Tailwind CSS v2.0+ */
-const posts = [
-  {
-    title: "Boost your conversion rate",
-    href: "s",
-    category: { name: "Article", href: "#" },
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
-    date: "Mar 16, 2020",
-    datetime: "2020-03-16",
-    imageUrl:
-      "https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-    readingTime: "6 min",
-    author: {
-      name: "Roel Aufderehar",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-  {
-    title: "How to use search engine optimization to drive sales",
-    href: "s",
-    category: { name: "Video", href: "#" },
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-    readingTime: "4 min",
-    author: {
-      name: "Brenna Goyette",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-  {
-    title: "How to use search engine optimization to drive sales",
-    href: "s",
-    category: { name: "Video", href: "#" },
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.",
-    date: "Mar 10, 2020",
-    datetime: "2020-03-10",
-    imageUrl:
-      "https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-    readingTime: "4 min",
-    author: {
-      name: "Brenna Goyette",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-  {
-    title: "Improve your customer experience",
-    href: "s",
-    category: { name: "Case Study", href: "#" },
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.",
-    date: "Feb 12, 2020",
-    datetime: "2020-02-12",
-    imageUrl:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80",
-    readingTime: "11 min",
-    author: {
-      name: "Daniela Metz",
-      href: "#",
-      imageUrl:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-  },
-];
-const Home: NextPage = () => {
+import { client } from "../apollo-client";
+import { gql } from "@apollo/client";
+const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
+  juries,
+  sponsors,
+  posts,
+}) => {
   const features = [
     {
       name: "Başvuru Formu",
@@ -138,7 +39,7 @@ const Home: NextPage = () => {
           T.C. Kültür ve Turizm Bakanlığı Katkılarıyla
         </h2>
         <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-          Uluslararası Kocaeli Kısa Film Festivali
+          Kocaeli Kısa Film Festivali
         </h1>
         <div className="relative mt-8 overflow-hidden rounded-lg">
           <div className="absolute inset-0">
@@ -158,10 +59,13 @@ const Home: NextPage = () => {
                 Festival Hakkında
               </h2>
               <p className="mt-3 text-lg text-white">
-                Endless tasks, limited hours, a single piece of paper. Not
-                really a haiku, but were doing our best here. No kanban boards,
-                burndown charts, or tangled flowcharts with our Focus system.
-                Just the undeniable urge to fill empty circles.
+                Kültür ve Turizm Bakanlığı destekleriyle gerçekleşecek Kocaeli
+                Kısa Film Festivali Türkiye’den seçkin sanatçıların katılacağı,
+                Kurmaca ve Belgesel kategorilerdeki filmlerin izleyiciyle
+                buluşacağı ve yarışacağı bir festival olacaktır. Festivalde
+                yönetmen, sinema oyuncuları, yapımcı ve sinema eleştirmenlerinin
+                katılımıyla çeşitli atölye çalışmaları, sempozyum ve etkinlikler
+                organizasyonda yer alacaktır.
               </p>
             </div>
           </div>
@@ -197,8 +101,8 @@ const Home: NextPage = () => {
           <h2 className="text-3xl font-bold sm:text-4xl">Jüri Üyelerimiz</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6 lg:gap-y-12">
-            {people.map((person, i) => (
-              <JuriCard person={person} key={i} />
+            {juries.map((jury: any, i: number) => (
+              <JuriCard person={jury} key={i} />
             ))}
           </div>
         </div>
@@ -206,54 +110,20 @@ const Home: NextPage = () => {
 
       <section id="sponsorlar" className="box">
         <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-              alt="Workcation"
-            />
-          </div>
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-              alt="Mirage"
-            />
-          </div>
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-              alt="Tuple"
-            />
-          </div>
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/laravel-logo-gray-400.svg"
-              alt="Laravel"
-            />
-          </div>
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-              alt="StaticKit"
-            />
-          </div>
-          <div className="flex justify-center col-span-1 px-8 py-8 bg-gray-50">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              className="max-h-12"
-              src="https://tailwindui.com/img/logos/statamic-logo-gray-400.svg"
-              alt="Statamic"
-            />
-          </div>
+          {sponsors.map((sponsor: any, i: number) => (
+            <div
+              key={i}
+              className="relative flex justify-center h-20 col-span-1 px-8 py-8 overflow-hidden bg-gray-50"
+            >
+              <Image
+                layout="fill"
+                objectFit="contain"
+                className="filter drop-shadow"
+                src={`${process.env.NEXT_APP_API_IMAGE_URL}${sponsor.image.url}`}
+                alt={sponsor.title}
+              />
+            </div>
+          ))}
         </div>
       </section>
 
@@ -267,35 +137,37 @@ const Home: NextPage = () => {
             role="list"
             className="space-y-12 lg:grid lg:grid-cols-4 lg:items-start lg:gap-x-8 lg:gap-y-12 lg:space-y-0"
           >
-            {posts.map((post, i) => (
-              <li key={i}>
-                <div className="flex flex-col items-center">
-                  <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-full">
-                    <Image
-                      layout="fill"
-                      objectFit="cover"
-                      src={post.imageUrl}
-                      alt=""
-                    />
+            {posts
+              .filter((e: any) => e.type === "e")
+              .map((post: any, i: number) => (
+                <li key={i}>
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-full">
+                      <Image
+                        layout="fill"
+                        objectFit="cover"
+                        src={`${process.env.NEXT_APP_API_IMAGE_URL}${post.image.url}`}
+                        alt={post.title}
+                      />
+                    </div>
+                    <Link href={`/blog/${post.id}`}>
+                      <a>
+                        <div className="space-y-2">
+                          <div className="space-y-1 text-lg font-medium leading-6">
+                            <h3>{post.title}</h3>
+                            <p className="text-base text-indigo-600">
+                              {post.tags.name}
+                            </p>
+                          </div>
+                          <div className="text-base line-clamp-3">
+                            <p className="text-gray-500">{post.description}</p>
+                          </div>
+                        </div>
+                      </a>
+                    </Link>
                   </div>
-                  <Link href={`/blog/${post.href}`}>
-                    <a>
-                      <div className="space-y-2">
-                        <div className="space-y-1 text-lg font-medium leading-6">
-                          <h3>{post.title}</h3>
-                          <p className="text-base text-indigo-600">
-                            {post.category.name}
-                          </p>
-                        </div>
-                        <div className="text-base line-clamp-3">
-                          <p className="text-gray-500">{post.description}</p>
-                        </div>
-                      </div>
-                    </a>
-                  </Link>
-                </div>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </div>
       </section>
@@ -308,9 +180,12 @@ const Home: NextPage = () => {
             </h2>
           </div>
           <div className="grid max-w-lg gap-8 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
-            {posts.slice(0, 3).map((post, i) => (
-              <BlogCard key={i} post={post} />
-            ))}
+            {posts
+              .filter((e: any) => e.type === "h")
+              .slice(0, 3)
+              .map((post: any, i: number) => (
+                <BlogCard key={i} post={post} />
+              ))}
           </div>
         </div>
       </section>
@@ -357,3 +232,78 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const {
+    data: { juries },
+  } = await client.query({
+    query: gql`
+      query Juries {
+        juries {
+          name
+          id
+          job
+          juryType
+          content {
+            document
+          }
+          image {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  const {
+    data: { sponsors },
+  } = await client.query({
+    query: gql`
+      query Sponsors {
+        sponsors {
+          title
+          image {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  const {
+    data: { posts },
+  } = await client.query({
+    query: gql`
+      query Posts {
+        posts {
+          id
+          title
+          description
+          image {
+            url
+          }
+          type
+          tags {
+            name
+          }
+          content {
+            document
+          }
+        }
+      }
+    `,
+  });
+
+  if (!juries || !posts) {
+    return {
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      juries: juries,
+      posts: posts,
+      sponsors: sponsors,
+    },
+  };
+}

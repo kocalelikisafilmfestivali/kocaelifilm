@@ -9,17 +9,16 @@ const movies = [
 
 export default function Program() {
   return (
-    <div className="py-10 bg-white sm:py-20 box">
+    <div className="py-10 bg-white sm:py-20 box min-h-[calc(100vh-152px)]">
       <div className="text-left">
         <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
           Dereceye Giren Filmler
         </h2>
         <p className="mt-4 text-slate-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-          possimus.
+          Dereceye giren filmler burada listelenecektir.
         </p>
       </div>
-      <div className="mt-10">
+      {/* <div className="mt-10">
         <div className="overflow-hidden border border-gray-300 rounded-md">
           <table className="min-w-full divide-y divide-gray-300">
             <thead className="bg-gray-50">
@@ -70,18 +69,17 @@ export default function Program() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
 
       <div className="mt-10 text-left">
         <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
           Finalist Filmler
         </h2>
         <p className="mt-4 text-slate-700">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam,
-          possimus.
+          Finalist filmler burada listelenecektir.
         </p>
       </div>
-      <div className="mt-10">
+      {/* <div className="mt-10">
         <div className="overflow-hidden border border-gray-300 rounded-md">
           <table className="min-w-full divide-y divide-gray-300">
             <thead className="bg-gray-50">
@@ -132,7 +130,7 @@ export default function Program() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

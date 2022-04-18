@@ -1,12 +1,15 @@
+import { gql } from "@apollo/client";
+import { DocumentRenderer } from "@keystone-6/document-renderer";
 import Image from "next/image";
+import { client } from "../../apollo-client";
 
-const Blog = () => {
+const Blog = ({ jury }: { jury: any }) => {
   return (
     <div className="gap-8 py-10 bg-white md:grid md:grid-cols-2 sm:py-20 box">
       <div className="relative w-full mx-auto mb-8 overflow-hidden rounded-lg shadow-lg aspect-square">
         <Image
-          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=facearea&w=1310&h=873&q=80&facepad=3"
-          alt=""
+          src={`${process.env.NEXT_APP_API_IMAGE_URL}${jury.image.url}`}
+          alt={jury.name}
           objectFit="cover"
           layout="fill"
         />
@@ -15,31 +18,89 @@ const Blog = () => {
         <div className="mx-auto mb-5 text-lg max-w-prose">
           <h1>
             <span className="block mt-2 text-3xl font-bold text-left text-gray-900 sm:text-4xl">
-              Furkan Çığırtkan
+              {jury.name}
             </span>
             <span className="block text-base font-semibold text-left text-indigo-600">
-              Jüri Üyesi
+              {jury.juryType}
             </span>
           </h1>
         </div>
-        <div className="mx-auto prose text-left max-w-none">
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente
-            distinctio quae beatae pariatur facere, cum sequi vero eligendi
-            quibusdam ipsam esse obcaecati odio enim a labore eius debitis error
-            ad accusantium itaque illum recusandae. Id nam facilis, nulla, neque
-            unde hic commodi est iste voluptatum voluptate quisquam aperiam
-            laboriosam quo et. Facilis impedit dicta aut ipsum cumque atque quae
-            quisquam omnis eum corporis! Quis accusantium nesciunt
-            exercitationem ipsum voluptatem consectetur iste laudantium amet in
-            minus veritatis natus, unde ullam labore illum magni eveniet esse
-            beatae placeat aspernatur doloremque impedit suscipit id eligendi?
-            Dolor quo delectus commodi quia provident nesciunt iste.
-          </p>
-        </div>
+        {jury?.content?.document && (
+          <div className="mx-auto prose text-left max-w-none">
+            <DocumentRenderer document={jury.content.document} />
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default Blog;
+
+export async function getStaticPaths() {
+  const {
+    data: { juries },
+  } = await client.query({
+    query: gql`
+      query Juries {
+        juries {
+          name
+          id
+          job
+          juryType
+          content {
+            document
+          }
+          image {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  const paths = juries.map((post: any) => ({
+    params: { slug: post.id },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = async ({ params }: { params: any }) => {
+  const {
+    data: { jury },
+  } = await client.query({
+    query: gql`
+      query Jury($where: JuryWhereUniqueInput!) {
+        jury(where: $where) {
+          name
+          id
+          job
+          juryType
+          content {
+            document
+          }
+          image {
+            url
+          }
+        }
+      }
+    `,
+    variables: {
+      where: {
+        id: params.slug,
+      },
+    },
+  });
+
+  if (!jury) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: { jury: jury },
+    revalidate: 90,
+  };
+};
