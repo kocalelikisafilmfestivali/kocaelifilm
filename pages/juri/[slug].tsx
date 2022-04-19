@@ -101,6 +101,6 @@ export const getStaticProps = async ({ params }: { params: any }) => {
 
   return {
     props: { jury: jury },
-    revalidate: 90,
+    revalidate: 300,
   };
 };
