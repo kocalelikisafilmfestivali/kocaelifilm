@@ -114,15 +114,21 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
               key={i}
               className="relative flex justify-center col-span-1 px-8 py-4 overflow-hidden h-28 bg-gray-50"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  className="filter drop-shadow"
-                  src={`${process.env.NEXT_APP_API_IMAGE_URL}${sponsor.image.url}`}
-                  alt={sponsor.title}
-                />
-              </div>
+              {sponsor?.image?.url ? (
+                <div className="relative w-full h-full">
+                  <Image
+                    layout="fill"
+                    objectFit="contain"
+                    className="filter drop-shadow"
+                    src={`${process.env.NEXT_APP_API_IMAGE_URL}${sponsor.image.url}`}
+                    alt={sponsor.title}
+                  />
+                </div>
+              ) : (
+                <div className="flex items-center justify-center w-full h-full text-xs font-semibold sm:text-base">
+                  {sponsor.title}
+                </div>
+              )}
             </div>
           ))}
         </div>
