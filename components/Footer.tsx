@@ -1,4 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
+import Image from "next/image";
+import uzzya from "../public/uzzya.svg";
 const navigation = [
   // {
   //   name: "Facebook",
@@ -58,6 +60,12 @@ export default function Footer() {
             2022 &copy; Kocaleli Film Festivali
           </p>
         </div>
+      </div>
+      <div className="flex items-center justify-center py-2 mx-auto text-xs text-gray-400 bg-white border-t border-gray-300">
+        <div className="relative w-5 h-5 bg-white opacity-60 filter drop-shadow-sm">
+          <Image objectFit="contain" layout="fill" alt="Uzzya" src={uzzya} />
+        </div>
+        Uzzya Tarafından Geliştirilmiştir
       </div>
     </footer>
   );
