@@ -44,16 +44,7 @@ export async function getStaticPaths() {
     query: gql`
       query Juries {
         juries {
-          name
           id
-          job
-          juryType
-          content {
-            document
-          }
-          image {
-            url
-          }
         }
       }
     `,
