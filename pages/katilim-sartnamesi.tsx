@@ -43,7 +43,11 @@ export async function getStaticProps() {
       }
     `,
   });
-
+  const sortedTerms = terms.sort((a: any, b: any) => {
+    return Number(a.title.split(" ")[1]) > Number(b.title.split(" ")[1])
+      ? 1
+      : -1;
+  });
   if (!terms) {
     return {
       notFound: true,
@@ -51,7 +55,7 @@ export async function getStaticProps() {
   }
   return {
     props: {
-      terms: terms,
+      terms: sortedTerms,
     },
     revalidate: 300,
   };
