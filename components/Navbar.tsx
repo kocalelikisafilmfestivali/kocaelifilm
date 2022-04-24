@@ -67,7 +67,7 @@ export default function Navbar() {
                 }
               }}
             >
-              Sponsorlar
+              Destekçilerimiz
             </button>
             <button
               onClick={() => {
@@ -195,7 +195,7 @@ export default function Navbar() {
               }}
               className="px-4 py-2 font-medium text-left"
             >
-              Sponsorlar
+              Destekçilerimiz
             </button>
             <button
               onClick={() => {
