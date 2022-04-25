@@ -57,6 +57,6 @@ export async function getStaticProps() {
     props: {
       terms: sortedTerms,
     },
-    revalidate: 300,
+    revalidate: 1800,
   };
 }
