@@ -41,6 +41,9 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
         <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
           Kocaeli Kısa Film Festivali
         </h1>
+        <h3 className="mt-2 text-sm font-semibold tracking-wider text-indigo-600 uppercase">
+          01-05 Ekim 2022
+        </h3>
         <div className="relative mt-8 overflow-hidden rounded-lg">
           <div className="absolute inset-0">
             <Image
@@ -115,7 +118,13 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
               className="relative flex justify-center col-span-1 px-8 py-4 overflow-hidden h-28 bg-gray-50"
             >
               {sponsor?.image?.url ? (
-                <div className="relative w-full h-full">
+                <div
+                  className={`relative ${
+                    sponsor.title === "Sinema Genel Müdürlüğü"
+                      ? "w-[75%] sm:w-[50%]"
+                      : "w-full h-full"
+                  }`}
+                >
                   <Image
                     layout="fill"
                     objectFit="contain"
