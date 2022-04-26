@@ -59,6 +59,5 @@ export async function getStaticProps() {
     props: {
       programs: programs,
     },
-    revalidate: 1800,
   };
 }

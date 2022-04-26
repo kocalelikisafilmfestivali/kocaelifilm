@@ -318,6 +318,5 @@ export async function getStaticProps() {
       posts: posts,
       sponsors: sponsors,
     },
-    revalidate: 1800,
   };
 }

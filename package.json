@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "start": "next start -p 3001",
+    "start": "serve out -p 3001",
     "lint": "next lint"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-hook-form": "^7.29.0",
     "react-hot-toast": "^2.2.0",
+    "serve": "^13.0.2",
     "swiper": "^8.1.0",
     "yup": "^0.32.11"
   },
