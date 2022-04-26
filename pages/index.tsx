@@ -102,9 +102,11 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
           <h2 className="text-3xl font-bold sm:text-4xl">Jüri Üyelerimiz</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-6 lg:gap-y-12">
-            {juries.map((jury: any, i: number) => (
-              <JuriCard person={jury} key={i} />
-            ))}
+            {juries
+              .sort((a: any, b: any) => Number(a.order) - Number(b.order))
+              .map((jury: any, i: number) => (
+                <JuriCard person={jury} key={i} />
+              ))}
           </div>
         </div>
       </section>
@@ -255,6 +257,7 @@ export async function getStaticProps() {
         juries {
           name
           id
+          order
           job
           juryType
           content {
@@ -312,6 +315,7 @@ export async function getStaticProps() {
       notFound: true,
     };
   }
+
   return {
     props: {
       juries: juries,
