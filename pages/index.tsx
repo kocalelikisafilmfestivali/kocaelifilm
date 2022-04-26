@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import {
   CalendarIcon,
@@ -5,7 +6,6 @@ import {
   LockClosedIcon,
 } from "@heroicons/react/outline";
 import BlogCard from "../components/BlogCard";
-import Image from "next/image";
 import JuriCard from "../components/JuriCard";
 import Link from "next/link";
 import { client } from "../apollo-client";
@@ -46,11 +46,10 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
         </h3>
         <div className="relative mt-8 overflow-hidden rounded-lg">
           <div className="absolute inset-0">
-            <Image
-              layout="fill"
+            <img
+              className="object-cover w-full h-full"
               src="https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
               alt=""
-              className="object-cover object-center w-full h-full"
             />
           </div>
           <div className="relative px-6 py-20 bg-gray-900 bg-opacity-75 sm:py-28 sm:px-12 lg:px-16">
@@ -125,10 +124,8 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
                       : "w-full h-full"
                   }`}
                 >
-                  <Image
-                    layout="fill"
-                    objectFit="contain"
-                    className="filter drop-shadow"
+                  <img
+                    className="object-contain w-full h-full filter drop-shadow"
                     src={`${process.env.NEXT_APP_API_IMAGE_URL}${sponsor.image.url}`}
                     alt={sponsor.title}
                   />
@@ -160,9 +157,8 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
                   <li key={i}>
                     <div className="flex flex-col items-center">
                       <div className="relative w-40 h-40 mb-4 overflow-hidden rounded-full">
-                        <Image
-                          layout="fill"
-                          objectFit="cover"
+                        <img
+                          className="object-cover w-full h-full"
                           src={`${process.env.NEXT_APP_API_IMAGE_URL}${post.image.url}`}
                           alt={post.title}
                         />

@@ -1,17 +1,16 @@
+/* eslint-disable @next/next/no-img-element */
 import { gql } from "@apollo/client";
 import { DocumentRenderer } from "@keystone-6/document-renderer";
-import Image from "next/image";
 import { client } from "../../apollo-client";
 
 const Blog = ({ post }: { post: any }) => {
   return (
     <div className="gap-8 py-10 bg-white md:grid md:grid-cols-2 sm:py-20 box">
       <div className="relative w-full mx-auto mb-8 overflow-hidden rounded-lg shadow-lg aspect-square">
-        <Image
+        <img
           src={`${process.env.NEXT_APP_API_IMAGE_URL}${post.image.url}`}
           alt={post.title}
-          objectFit="cover"
-          layout="fill"
+          className="object-cover w-full h-full"
         />
       </div>
       <div className="w-full">

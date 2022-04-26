@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { FC } from "react";
 
@@ -10,9 +10,8 @@ const BlogCard: FC<BlogCardProps> = ({ post }) => {
   return (
     <div className="flex flex-col overflow-hidden rounded-lg shadow-selectShadow">
       <div className="relative flex-shrink-0 w-full h-48">
-        <Image
-          layout="fill"
-          objectFit="cover"
+        <img
+          className="object-cover w-full h-full"
           src={`${process.env.NEXT_APP_API_IMAGE_URL}${post.image.url}`}
           alt={post.title}
         />

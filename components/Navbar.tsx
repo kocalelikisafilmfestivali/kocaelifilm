@@ -1,9 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { MenuIcon } from "@heroicons/react/outline";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import logo from "../public/logo.png";
 
 export default function Navbar() {
   const [open, setopen] = useState(false);
@@ -15,12 +14,9 @@ export default function Navbar() {
           <Link href="/">
             <a>
               <div className="relative w-20 h-10">
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src={logo}
-                  quality={100}
-                  priority
+                <img
+                  className="object-contain w-full h-full"
+                  src="/logo.png"
                   alt="Kocaeli Film Festivali"
                 />
               </div>
