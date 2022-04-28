@@ -4,12 +4,16 @@ import {
   CalendarIcon,
   CloudUploadIcon,
   LockClosedIcon,
+  XIcon,
 } from "@heroicons/react/outline";
 import BlogCard from "../components/BlogCard";
 import JuriCard from "../components/JuriCard";
+import ktblogo from "../public/ktblogo.png";
 import Link from "next/link";
 import { client } from "../apollo-client";
 import { gql } from "@apollo/client";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
   juries,
   sponsors,
@@ -32,12 +36,82 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
       href: "/festival-programi",
     },
   ];
+  const [open, setOpen] = useState(0);
+  useEffect(() => {
+    if (sessionStorage.getItem("close")) {
+      setOpen(2);
+    } else {
+      sessionStorage.setItem("open", "1");
+      setOpen(1);
+    }
+    if (sessionStorage.getItem("open")) {
+      setOpen(1);
+    }
+  }, []);
   return (
     <div className="relative py-10 sm:py-20">
+      {open === 1 && (
+        <div className="fixed flex justify-center p-4 items-center inset-0 z-50 w-full h-full bg-black bg-opacity-60 backdrop-blur-[2px]">
+          <div className="relative w-full max-w-md p-4 bg-white rounded-md top-1/">
+            <button
+              onClick={() => {
+                sessionStorage.setItem("close", "2");
+                sessionStorage.removeItem("open");
+                setOpen(2);
+              }}
+              className="absolute flex items-center justify-center rounded-md bg-slate-200 right-2 w-7 h-7 top-2"
+            >
+              <XIcon className="w-4 h-4" />
+            </button>
+            <h5 className="mb-3 font-semibold text-center">Bilgilendirme</h5>
+            <div className="prose-sm text-center prose w-full max-w-[unset]">
+              <p>
+                Ön başvurular dijital ortama yüklenen filmler üzerinden
+                alınacaktır.
+              </p>
+              <p>
+                Başvuru için film videolarınızı vimeo.com vb. siteler üzerinden
+                yükleyebilirsiniz.
+              </p>
+              <p>
+                Video linkinde şifre mevcut ise lütfen açıklama kısmında şifreyi
+                belirtiniz.
+              </p>
+              <p>
+                Diğer bilgiler için lütfen{" "}
+                <Link href={`/katilim-sartnamesi`}>
+                  <a>
+                    <b>Şartname’yi</b>
+                  </a>
+                </Link>{" "}
+                okuyunuz.
+              </p>
+            </div>
+
+            <div className="flex items-center justify-center mx-auto mt-3 ">
+              <Link href={`/basvuru-formu`}>
+                <a className="px-6 py-2 text-sm font-medium text-white bg-indigo-500 rounded-md">
+                  Hemen Başvur
+                </a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
       <section className="box">
-        <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
-          T.C. Kültür ve Turizm Bakanlığı Katkılarıyla
-        </h2>
+        <div>
+          <Image
+            src={ktblogo}
+            width={60}
+            priority
+            quality={100}
+            height={60}
+            alt="T.C. KÜLTÜR VE TURİZM BAKANLIĞI"
+          />
+          <h2 className="text-base font-semibold tracking-wider text-indigo-600 uppercase">
+            T.C. KÜLTÜR VE TURİZM BAKANLIĞI KATKILARIYLA
+          </h2>
+        </div>
         <h1 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
           Kocaeli Kısa Film Festivali
         </h1>
