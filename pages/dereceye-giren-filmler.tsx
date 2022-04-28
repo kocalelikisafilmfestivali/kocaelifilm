@@ -9,7 +9,7 @@ const movies = [
 
 export default function Program() {
   return (
-    <div className="py-10 bg-white sm:py-20 box min-h-[calc(100vh-152px)]">
+    <div className="py-10 bg-white sm:py-16 box min-h-[calc(100vh-152px)]">
       <div className="text-left">
         <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
           Dereceye Giren Filmler

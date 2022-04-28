@@ -3,7 +3,7 @@ import { DocumentRenderer } from "@keystone-6/document-renderer";
 import { client } from "../apollo-client";
 export default function Terms({ terms }: { terms: any }) {
   return (
-    <div className="py-10 bg-white sm:py-20 box min-h-[calc(100vh-152px)]">
+    <div className="py-10 bg-white sm:py-16 box min-h-[calc(100vh-152px)]">
       <div className="text-left">
         <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
           Kocaeli Kısa Film Festivali Katılım Esasları

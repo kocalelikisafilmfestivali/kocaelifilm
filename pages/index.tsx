@@ -8,11 +8,11 @@ import {
 } from "@heroicons/react/outline";
 import BlogCard from "../components/BlogCard";
 import JuriCard from "../components/JuriCard";
-import ktblogo from "../public/ktblogo.png";
+
 import Link from "next/link";
 import { client } from "../apollo-client";
 import { gql } from "@apollo/client";
-import Image from "next/image";
+
 import { useEffect, useState } from "react";
 const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
   juries,
@@ -49,7 +49,7 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
     }
   }, []);
   return (
-    <div className="relative py-10 sm:py-20">
+    <div className="relative py-10 sm:py-16">
       {open === 1 && (
         <div className="fixed flex justify-center p-4 items-center inset-0 z-50 w-full h-full bg-black bg-opacity-60 backdrop-blur-[2px]">
           <div className="relative w-full max-w-md p-4 bg-white rounded-md top-1/">
@@ -100,11 +100,10 @@ const Home: NextPage<{ juries: any; posts: any; sponsors: any }> = ({
       )}
       <section className="box">
         <div>
-          <Image
-            src={ktblogo}
+          <img
+            src={"/ktblogo.png"}
             width={60}
-            priority
-            quality={100}
+            className="mx-auto mb-2"
             height={60}
             alt="T.C. KÜLTÜR VE TURİZM BAKANLIĞI"
           />

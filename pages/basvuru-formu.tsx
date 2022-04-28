@@ -88,7 +88,7 @@ const Form: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="py-10 sm:py-20 box">
+    <form onSubmit={handleSubmit(onSubmit)} className="py-10 sm:py-16 box">
       <h2 className="mb-10 text-3xl font-bold tracking-tight text-black sm:text-4xl">
         Başvuru Formu
       </h2>
