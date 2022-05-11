@@ -59,7 +59,10 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <div className="flex items-center justify-center py-2 mx-auto text-xs text-gray-400 bg-white border-t border-gray-300">
+      <a
+        href="mailto:furkan.cigirtkan@gmail.com"
+        className="flex items-center justify-center py-2 mx-auto text-xs text-gray-400 bg-white border-t border-gray-300"
+      >
         <div className="relative w-5 h-5 bg-white opacity-60 filter drop-shadow-sm">
           <img
             className="object-contain w-full h-full"
@@ -68,7 +71,7 @@ export default function Footer() {
           />
         </div>
         Uzzya Tarafından Geliştirilmiştir
-      </div>
+      </a>
     </footer>
   );
 }

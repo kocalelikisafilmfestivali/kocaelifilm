@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <div className="sticky top-0 z-10 w-full h-16 bg-white shadow-selectShadow">
       <nav className="relative w-full h-full">
-        <div className="flex items-center justify-between lg:grid w-full h-full lg:grid-cols-[200px,1fr,200px] place-content-center px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between lg:grid w-full h-full lg:grid-cols-[184px,1fr,184px] place-content-center px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <Link href="/">
             <a>
               <div className="relative w-20 h-10">
@@ -22,7 +22,7 @@ export default function Navbar() {
               </div>
             </a>
           </Link>
-          <div className="items-center hidden mx-auto text-sm lg:flex space-x-7 text-slate-700">
+          <div className="items-center hidden mx-auto space-x-5 text-sm lg:flex text-slate-700">
             <button
               onClick={() => {
                 if (router.asPath !== "/") {
@@ -43,6 +43,13 @@ export default function Navbar() {
               }}
             >
               Haberler
+            </button>
+            <button
+              onClick={() => {
+                router.push("/basinda-biz");
+              }}
+            >
+              Basında Biz
             </button>
             <button
               onClick={() => {
@@ -169,6 +176,15 @@ export default function Navbar() {
               className="px-4 py-2 font-medium text-left"
             >
               Haberler
+            </button>
+            <button
+              className="px-4 py-2 font-medium text-left"
+              onClick={() => {
+                setopen(false);
+                router.push("/basinda-biz");
+              }}
+            >
+              Basında Biz
             </button>
             <button
               onClick={() => {
